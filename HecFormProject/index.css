@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.nav{
+  position: relative;
+    background-image:linear-gradient(to right, #DCE35B 0%, #45B649 51%, #DCE35B 100%);;
+}
+#myFileInput{
+  width: 250px;
+}
+#imgPreview{
+  width: 250px;
+  height: 150px;
+}
+.submitBtn{
+  position: relative;
+  left: auto;
+  right: auto;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .tblParent{
+    width: 100%;
+    overflow-x: auto;
+  }
+  #titleError,  #full_nameError, #martial_status,#gender,#emptype,#country,#postal_code,#city,#yearValid,
+   #imgPreview,#dateOfBirth,#month,#year,#domicile_province,#country_birth,#domicile_city,#address{
+    color: rgb(33, 28, 28);
+  }
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(209, 226, 19); 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(85, 85, 85); 
+}
+
+@media only screen and (max-width: 769px) and (min-width: 320px)  {
+  .nav{
+    width: 805px;
+  }
+  #tbl{
+    width: 798px;
+  }
+  .tblParent{
+    width: 100%;
+  }
+  #tabsContent{
+    position: relative;
+    left: 177px;
+  }
+}

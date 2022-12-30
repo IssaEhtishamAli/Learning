@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/bootstrap-5.2.3-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>HecForm</title>
+</head>
+<body>
+  <section id="tabs">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
+          role="tab" aria-controls="home-tab-pane" aria-selected="true">Personal Details</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
+          role="tab" aria-controls="profile-tab-pane" aria-selected="false">Contact Info</button>
+      </li>
+    </ul>
+    </div>
+  </section>
+  <section id="tabsContent">
+    <div class="container-fluid mt-5">
+      <form action="">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="pb-3">
+                  <p> <strong>Tell Us About yourself!</strong></p>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="titles">Title</label>
+                    <div class="input-group mb-3 ">
+                      <select class="is-invalid form-select " id="titles">
+                        <option selected>Choose</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                      </select>
+                      <small id="titleValid" class="form-text text-muted invalid-feedback">Please select the
+                        title</small>
+                    </div>
+                    <span id="titleError"></span>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control is-invalid" id="full_name" placeholder="Full Name">
+                    <small id="full_nameValid" class="form-text text-muted invalid-feedback">Please enter your
+                      name</small>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label>Martial Status</label>
+                    <div class="input-group mb-3">
+                      <select class="form-select is-invalid" id="martial_status">
+                        <option selected>Choose</option>
+                        <option value="Seprated">Seprated</option>
+                        <option value="Widowed">Widowed</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                      </select>
+                      <small id="martial_statusValid" class="form-text text-muted invalid-feedback">Please select your
+                        martial status</small>
+                    </div>
+                    <span id="martial_status"></span>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label>Gender</label>
+                    <div class="input-group mb-3">
+                      <select class="form-select is-invalid" id="gender">
+                        <option selected>Choose</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                      </select>
+                      <small id="genderValid" class="form-text text-muted invalid-feedback">Please select the
+                        gender</small>
+                    </div>
+                    <span id="gender"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <img id="imgPreview" src="" alt=""> <br>
+                <input type="file" id="myFileInput" class="btn btn-outline-success"> <br> <br>
+                <span id="imgPreview"></span>
+                <!-- <button class="btn btn-outline-success">Upload</button> &nbsp;&nbsp; -->
+                <button type="button" class="btn btn-outline-danger" onclick="Delete()">Delete</button>
+              </div>
+            </div>
+            <hr>
+            <p> <strong>Biographical Information</strong></p>
+            <div class="row">
+              <div class="col-md-3">
+                <p><strong>Date of Birth</strong></p>
+              </div>
+              <div class="col-md-3">
+                <div class="row g-0">
+                  <div class="col-md-4 form-group">
+                    <select class="form-select is-invalid" id="dates">
+                      <option selected>Choose</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="20">20</option>
+                    </select>
+                    <small id="dateOfBirthValid" class="form-text text-muted invalid-feedback">Please select the
+                      date</small>
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <select class="form-select is-invalid" id="month">
+                      <option selected>Choose</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                    </select>
+                    <small id="monthValid" class="form-text text-muted invalid-feedback">Please select the month</small>
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <select class="form-select is-invalid" id="year">
+                      <option selected>Choose</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                      <option value="2020">2020</option>
+                      <option value="1997">1997</option>
+                    </select>
+                    <small id="yearValid" class="form-text text-muted invalid-feedback">Please select the year</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-1 offset-2">
+                <label>Domicile Province</label>
+              </div>
+              <div class="col-md-3 form-group">
+                <select class="form-select is-invalid" id="domicile_province">
+                  <option selected>Choose</option>
+                  <option value="Narowal">Narowal</option>
+                  <option value="Islamabad">Islamabad</option>
+                  <option value="Sialkot">Sialkot</option>
+                </select>
+                <small id="domicile_provinceValid" class="form-text text-muted invalid-feedback">Please select the
+                  domicile province</small>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-3">
+                <p><strong>Country of Birth</strong></p>
+              </div>
+              <div class="col-md-3 form-group">
+                <select class="form-select is-invalid" id="country_birth">
+                  <option selected>Choose</option>
+                  <option value="Pakistan">Pakistan</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Dubai">Dubai</option>
+                </select>
+                <small id="country_birthValid" class="form-text text-muted invalid-feedback">Please select the country
+                  of birth</small>
+              </div>
+              <div class="col-md-1 offset-2">
+                <label>Domicile City</label>
+              </div>
+              <div class="col-md-3 form-group">
+                <select class="form-select is-invalid" id="domicile_city">
+                  <option selected>Choose</option>
+                  <option value="Narowal">Narowal</option>
+                  <option value="Islamabad">Islamabad</option>
+                  <option value="Sialkot">Sialkot</option>
+                </select>
+                <small id="domicile_cityValid" class="form-text text-muted invalid-feedback">Please select the domicile
+                  city</small>
+              </div>
+            </div>
+          </div>
+          <!----Tabs 2-->
+          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <p> <strong>Permanent Details</strong></p>
+            <div class="row">
+              <div class="col-md-3">
+                <p><strong>Type</strong></p>
+              </div>
+              <div class="col-md-3 form-group">
+                <select class="form-select is-invalid" id="stdType">
+                  <option selected>Choose</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Temporary">Temporary</option>
+                </select>
+                <small id="stdTypeValid" class="form-text text-muted invalid-feedback">Please select the permanent
+                  details</small>
+              </div>
+              <div class="col-md-1 offset-2">
+                <label for="address">Address</label>
+              </div>
+              <div class="col-md-3 form-group">
+                <input type="text" class="form-control is-invalid" id="address">
+                <small id="addressValid" class="form-text text-muted invalid-feedback">Please select the address</small>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-3">
+                <p><strong>Country</strong></p>
+              </div>
+              <div class="col-md-3 form-group">
+                <select class="form-select is-invalid" id="country">
+                  <option selected>Choose</option>
+                  <option value="Pakistan">Pakistan</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Dubai">Dubai</option>
+                </select>
+                <small id="countryValid" class="form-text text-muted invalid-feedback">Please select the country</small>
+              </div>
+              <div class="col-md-1 offset-2">
+                <label>Postal Code</label>
+              </div>
+              <div class="col-md-3 form-group">
+                <select class="form-select is-invalid" id="postal_code">
+                  <option selected>Choose</option>
+                  <option value="44000">44000</option>
+                  <option value="64000">64000</option>
+                  <option value="92000">92000</option>
+                  <option value="13000">13000</option>
+                </select>
+                <small id="postal_codeValid" class="form-text text-muted invalid-feedback">Please select the postal
+                  code</small>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-3">
+                <p><strong>City</strong></p>
+              </div>
+              <div class="col-md-3 form-group">
+                <select class="form-select is-invalid" id="city">
+                  <option selected>Choose</option>
+                  <option value="Islamabad">Islamabad</option>
+                  <option value="Narowal">Narowal</option>
+                  <option value="Rawalpindi">Rawalpindi</option>
+                  <option value="Sialkot">Sialkot</option>
+                </select>
+                <small id="cityValid" class="form-text text-muted invalid-feedback">Please select the city</small>
+              </div>
+            </div>
+            <div class="position-relative">
+              <div class="position-absolute top-0 end-0">
+                <button type="button" name="add" onclick="addStudent();" class="btn btn-outline-success mt-3">Save
+                  Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container-fluid mt-5">
+      <div class="col-md-12 tblParent">
+        <table id="tbl">
+          <thead>
+            <th>Title</th>
+            <th>Full Name</th>
+            <th>Martial Status</th>
+            <th>Gender</th>
+            <th>Date of birth</th>
+            <th>Country of Birth</th>
+            <th>Domicile Province</th>
+            <th>Domicile City</th>
+            <th>Type</th>
+            <th>Address </th>
+            <th>Country</th>
+            <th>Postal Code</th>
+            <th>City</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <script src="./assets/bootstrap-5.2.3-dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
